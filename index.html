@@ -13,29 +13,29 @@
 <body>
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Customize the Message Area</h4>
-	      </div>
-	      <div class="modal-body">
-	        <div>
-	        	<h5>Change Background Color</h5>
-	        	<input type="color" id="changeBackground">
-	        </div>
-	        <div>
-	        	<h5>Change Font Color</h5>
-	        	<input type="color" id="changeFont">
-	        </div>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-	        <button type="button" class="btn btn-primary" id="saveTheme">Save</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Customize the Message Area</h4>
+				</div>
+				<div class="modal-body">
+					<div>
+						<h5>Change Background Color</h5>
+						<input type="color" id="changeBackground">
+					</div>
+					<div>
+						<h5>Change Font Color</h5>
+						<input type="color" id="changeFont">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary" id="saveTheme">Save</button>
+				</div>
+			</div>
+		</div>
+	</div> <!-- End of Modal -->
 
 	<div id="wrapper" class="wrapper">
 		<header id="navBar" class="navBar">
@@ -45,6 +45,15 @@
 
 			<div id="options">
 				<input type="text" id="userInput" placeholder="Type Message Here">
+				<div>
+					<input class="rButton" type="radio" name="choice" value="Zeus" checked> Zeus
+					<input class="rButton" type="radio" name="choice" value="Poseidon"> Poseidon
+					<input class="rButton" type="radio" name="choice" value="Athena"> Athena
+					<input class="rButton" type="radio" name="choice" value="Hercules"> Hercules
+					<input class="rButton" type="radio" name="choice" value="Thor"> Thor
+					<input class="rButton" type="radio" name="choice" value="Beowulf"> Beowulf
+					<input class="rButton" type="radio" name="choice" value="Hades"> Hades
+				</div>
 				<div class="checkOpt">
 					<input type="checkbox" id="darkTheme">
 					<label for="darkTheme" class="navLabel">Dark Theme</label>
@@ -76,7 +85,7 @@
 	<script src="javaScripts/toggle.js"></script>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

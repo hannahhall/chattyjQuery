@@ -130,6 +130,15 @@ h2 {
   font-weight: 600;
 }
 
+.userName {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.userMsg {
+  font-weight: normal;
+  font-size: 1.2em;
+}
 /*========================*/
 /* Leave these classes at the bottom of the cascade */
 /* Large theme */

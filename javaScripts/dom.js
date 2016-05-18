@@ -14,6 +14,7 @@ var headerDiv = $("#navBar"),
 		edit = false,
 		id,
 		messageToEdit,
+		userName,
 		userMessage;
 
 // Event Listeners
@@ -30,12 +31,18 @@ function msgSubmit(key) {
 			var editMsg = $(document.getElementById(id))[0];
 			var index = id;
 			console.log(index);
-			Chatty.editMessage(userInput.val(), id, index);
+			Chatty.editMessage(userInput.val(), id, index, userName);
 			edit = false;
 			userInput.val("");
 			userInput.off("keyup");
 		} else {
-			Chatty.addNewMessage(userInput.val());
+			var rButton = $(".rButton");
+			for (var i = 0; i < rButton.length; i++) {
+				if (rButton[i].checked) {
+					var selected = rButton[i].value;
+				}
+			}
+			Chatty.addNewMessage(userInput.val(), selected);
 			userInput.val("");
 			clearAllButton.prop("disabled", false);
 		}
@@ -49,6 +56,8 @@ function editMsg() {
 		messageToEdit = $(event.target).parent().html();
 		console.log(messageToEdit);
 		id = $(event.target).parent().prop("id");
+		userName = $(event.target).siblings(".userName").html();
+		console.log(userName);
 		userMessage = $(event.target).siblings("label");
 		userInput.focus();
 		userInput.val(userMessage.html());
