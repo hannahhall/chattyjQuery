@@ -40,6 +40,15 @@ var Chatty = (function(aug) {
 		Chatty.updatePosition();
 	};
 
+	// Deletes all messages from array
+	aug.deleteAllData = function (){
+		var messages = Chatty.getMessages();
+		for (var i = 0; i < messages.length; i++) {
+			messages.splice(i);
+		}
+		idCounter = 0;
+	}
+
 	// After a message is deleted in array, this corrects handle to match index
 	aug.updatePosition = function () {
 		var messages = Chatty.getMessages();

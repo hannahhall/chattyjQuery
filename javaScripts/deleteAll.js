@@ -11,15 +11,11 @@ var Chatty = (function (aug) {
 
 		}
 	};
-	// Removes all messages
+	// Removes all messages from page
 	aug.deleteAll = function () {
-		var messages = Chatty.getMessages();
-		console.log(messages.length);
-		for (var i = 0; i < messages.length; i++) {
-			messages.splice(i);
-		}
 		$(".msgArea").empty();
 		buttonClearAll.prop("disabled",true);
+		Chatty.deleteAllData();
 	};
 
 	return aug;
