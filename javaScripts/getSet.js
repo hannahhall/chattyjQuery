@@ -4,27 +4,28 @@ var Chatty = (function(aug) {
 	var idCounter = 0;
 
 	// Creates message object
-	function Message (string, handle, updateTime) {
+	function Message (user, string, handle, updateTime) {
+		this.user = user;
 		this.string = string;
 		this.handle = handle;
 		this.time = updateTime;
 	}
 
 	// Pushes message object to array
-	aug.addNewMessage = function (newItem) {
+	aug.addNewMessage = function (newItem, user) {
 		var updateTime = new Date();
 		updateTime = updateTime.toLocaleTimeString() + " " + updateTime.toLocaleDateString();
-		var newMsg = new Message(newItem, `${idCounter}`, updateTime);
+		var newMsg = new Message(user, newItem, `${idCounter}`, updateTime);
 		messageArray.push(newMsg);
 		idCounter++;
 		Chatty.loadMessages(newMsg);
 	};
 
 	// Pushes edited message to specific index in array
-	aug.editMessage = function (editText, editId, index) {
+	aug.editMessage = function (editText, editId, index, user) {
 		var updateTime = new Date();
 		updateTime = updateTime.toLocaleTimeString() + " " + updateTime.toLocaleDateString();
-		var editMsg = new Message(editText, editId, updateTime);
+		var editMsg = new Message(user, editText, editId, updateTime);
 		messageArray[index]=editMsg;
 	};
 
@@ -61,7 +62,7 @@ var Chatty = (function(aug) {
 
 	// Loads message to dom
 	aug.loadMessages = function (message) {
-			$(".msgArea").append(`<p id="${message.handle}" class="message"><label class='userMsg'>${message.string} </label><button class="delete btn btn-default">Delete</button><button class="edit btn btn-primary">Edit</button><span class="timeStamp">${message.time}</span></p>`);
+			$(".msgArea").append(`<p id="${message.handle}" class="message"><span class="userName">${message.user}</span>: <label class='userMsg'>${message.string} </label><button class="delete btn btn-default">Delete</button><button class="edit btn btn-primary">Edit</button><span class="timeStamp">${message.time}</span></p>`);
 	};
 
 	return aug;
